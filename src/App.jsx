@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { CartProvider } from './context/CartContext';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
@@ -11,7 +11,6 @@ import OrderSuccess from './pages/OrderSuccess';
 function App() {
   return (
     <CartProvider>
-      <BrowserRouter>
         <div className="min-h-screen bg-gray-50">
           <Navbar />
           <Routes>
@@ -23,7 +22,6 @@ function App() {
             <Route path="/order-success/:id" element={<OrderSuccess />} />
           </Routes>
         </div>
-      </BrowserRouter>
     </CartProvider>
   );
 }
